@@ -1,0 +1,360 @@
+#osbitools select.col-list {
+  margin-bottom: 2px;
+}
+
+#osbitools .ctrl-btns {
+  padding-top: 4px;
+  padding-bottom: 0;
+  text-align: right;
+}
+
+#osbitools .sql-data {
+  margin-top: 2px;
+}
+
+#osbitools table.csv-data-cfg {
+  border-spacing: 2px;
+}
+
+#osbitools table.col-list th {
+  color: blue;
+}
+
+#osbitools table.col-list th {
+  padding-right: 5px;
+}
+
+#osbitools table.col-list td.col-ctrl span.ui-icon {
+  float: right;
+}
+
+#osbitools table.col-list td {
+  padding: 2px;
+}
+
+#osbitools table.ds-spec-wrapper > tbody > tr > td {
+  vertical-align: top;
+}
+
+#osbitools table.ds-spec-wrapper button.col-list-ctrl {
+  width: 100%;
+}
+
+#osbitools table.ds-spec-wrapper td.ds-wrapper {
+  padding-left: 20px;
+}
+
+#osbitools table.col-list span.ui-icon {
+  cursor: pointer;
+  margin-bottom: -4px;
+}
+
+#osbitools .no-wrap {
+  white-space: nowrap;
+}
+
+#osbitools input.unique {
+  vertical-align: middle;
+}
+
+#osbitools .ds-ext-cfg-wrapper {
+  margin-top: 2px;
+}
+
+#osbitools tbody.err-ds-lst td.col-val {
+  white-space: nowrap;
+}
+
+#osbitools tbody.err-ds-lst td.col-val button {
+  margin-left: 2px;
+}
+
+#osbitools td.nowrap {
+  white-space: nowrap;
+}
+
+#osbitools button.cancel {
+  margin-left: 3px;
+}
+
+#osbitools table.error-ds span.ui-icon {
+  cursor: pointer;
+  margin-bottom: -4px;
+}
+
+#osbitools td.col-ctrl {
+  text-align: center;
+}
+
+#osbitools tr.header1 th {
+  color: black;
+}
+
+#osbitools td.err-ds-group {
+  padding-left: 5px;
+}
+
+#osbitools td.err-val {
+  text-align: right;
+}
+
+#osbitools input.stop-on-error {
+  margin-left: 2px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+#osbitools input.error-val {
+  margin-left: 2px;
+  width: 120px;
+}
+
+#osbitools td.col-list-wrapper {
+  padding-left: 10px;
+}
+
+#osbitools td.upload-ctrl-wrapper {
+  width: 19px;
+  vertical-align: middle;
+}
+
+#osbitools .ds-data {
+  min-height: 15px;
+}
+
+#osbitools .ds-data span.ui-icon {
+  height: 15px;
+}
+
+#osbitools .ds-data span.ui-icon-close {
+  right: 5px;
+}
+
+#osbitools div.ds-data span.toggle {
+  right: 30px;
+}
+
+#osbitools tbody.ds tr:last-child td {
+  border-bottom: 1px dotted gray;
+}
+
+#osbitools div.static-ds-header {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+#osbitools table.static-ds-data {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #C9B7A9;
+  border-collapse: separate;
+}
+  
+#osbitools table.static-ds-data tbody.data tr td {
+  padding: 2px;
+  vertical-align: middle;
+  border-right: 1px solid #C9B7A9;
+  border-bottom: 1px solid #C9B7A9;
+}
+
+#osbitools table.static-ds-data tbody.data tr td:last-child {
+  border-right: none;
+}
+
+#osbitools button.ds-btn-ctrl {
+  float: right;
+}
+
+#osbitools table.static-ds-data th {
+  font-weight: bold;
+  color: #00008B;
+  background: #E7E7E7;
+  padding: 2px 5px;
+  border-right: 1px solid #C9B7A9;
+  border-bottom: 1px solid #C9B7A9;
+}
+
+#osbitools table.static-ds-data th:first-child {
+  border-top-left-radius: 5px;
+}
+
+#osbitools table.static-ds-data th:last-child {
+  border-right: none;
+  border-top-right-radius: 5px;
+}
+
+#osbitools tbody.ds-ctrl-wrapper td {
+  padding: 5px;
+  text-align: right;
+}
+
+#osbitools table.static-ds-data tbody.data span.ui-icon {
+  float: right;
+}
+
+#osbitools table.static-ds-data tbody.data span.ui-icon {
+  height: 14px;
+  cursor: pointer;
+  margin-top: -4px;
+}
+
+#osbitools table.static-ds-data tbody.data td.value {
+  text-align: right;
+}
+
+#osbitools table.static-ds-data td.row-ctrl {
+  white-space: nowrap;
+}
+
+#osbitools table.static-ds-data td.value input.num {
+  width: 100px;
+}
+
+#osbitools td.ctrl-btn-wrapper {
+  min-width: 50px;
+  vertical-align: middle;
+}
+
+#osbitools table.ds-ext-wrapper {
+  width: 100%;
+  margin-top: 8px;
+}
+
+#osbitools .ds-spec-wrapper {
+  margin-top: 2px;
+}
+
+#osbitools .upload-ctrl {
+  margin-left: 5px;
+}
+
+#osbitools input.csv-file,
+#osbitools input.upload-file {
+  padding: 0;
+}
+
+#osbitools .upload-ctrl button.upload {
+  padding: 3px 6px;
+}
+
+#osbitools table.sql-data-cfg {
+  border-spacing: 5px;
+}
+
+#osbitools table.sql-data-cfg td {
+  vertical-align: top;
+}
+
+#osbitools table.sql-params tbody.sql-params tr:last-child td {
+  padding-bottom: 5px;
+}
+
+#osbitools .not-active {
+  color: silver;
+}
+
+#osbitools .bottom-btn {
+  text-align: right;
+  padding-top: 5px;
+}
+
+#osbitools .ll_value {
+  text-align: center;
+}
+
+#osbitools textarea.sql-query {
+  width: 280px;
+  height: 60px;
+}
+
+#osbitools .upload_file {
+  bottom: 2px;
+  position: absolute;
+}
+
+#osbitools .abs {
+  height: 100%;
+  /* width: 100%; */
+  position: absolute;
+}
+
+#osbitools table.ds-ext-cfg input {
+  margin-right: 5px;
+}
+
+#osbitools table.ds-ext-cfg input.short {
+  width: 15px;
+}
+
+#osbitools table.ds-ext-cfg {
+  padding-top: 2px;
+}
+
+#osbitools table.ds-ext-cfg label {
+  font-weight: bold;
+}
+
+#osbitools table.ds-ext-cfg > tbody > tr > th {
+  text-align: left;
+  padding-right: 15px;
+  padding-bottom: 2px;
+}
+
+#osbitools table.ds-ext-cfg > tbody > tr > td {
+  vertical-align: top;
+  padding-right: 15px
+}
+
+/* DataSet Ext */
+
+#osbitools table.ds-ext-wrapper {
+  width: 100%;
+  margin-top: 8px;
+}
+
+#osbitools .ds-ext {
+  padding: 2px;
+  min-height: 8px;
+  position: relative;
+}
+
+#osbitools .ds-ext-assigned {
+  margin-top: 14px;
+  padding-top: 8px;
+}
+
+#osbitools .ds-data-empty {
+  color: #e7e7e7;
+  padding: 50px 0;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#osbitools .ds-data .ds-data-empty {
+  padding: 20px 0;
+}
+
+#osbitools div.ds-ext > span.ds-ext-btn {
+  top: -12px;
+  cursor: pointer;
+  position: absolute;
+  background-color: white;
+}
+
+#osbitools div.ds-ext > span.ui-icon-close {
+  right: 5px;
+}
+
+#osbitools .ds-ext-empty {
+  margin-bottom: 0;
+}
+
+#osbitools input.ds_sel {
+  width: 50px;
+}
+
+#osbitools .req-params-wrapper.wrapper-ctrl {
+  margin-bottom: 15px;
+}

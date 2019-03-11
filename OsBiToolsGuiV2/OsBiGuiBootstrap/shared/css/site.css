@@ -1,0 +1,311 @@
+/*
+ * Copyright 2014-2015 IvaLab Inc. and contributors below
+ * 
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ * Date: 2015-03-03
+ * 
+ * Contributors:
+ * 
+ */
+
+#osbitools .hidden,
+#osbitools .hidden-block {
+  display: none;
+  visibility: inherit;
+}
+
+#osbitools .rfloat {
+  float: right;
+}
+
+#osbitools .lfloat {
+  float: left;
+}
+
+#osbitools .ralign {
+  text-align: right;
+}
+
+#osbitools .lalign {
+  text-align: left;
+}
+
+#osbitools .center {
+  text-align: center;
+}
+
+#osbitools .nowrap {
+  white-space: nowrap;
+}
+
+#osbitools .osbi-header {
+  font-size: 0.7em;
+  font-weight: bold;
+  padding: 5px;
+}
+
+#osbi_title {
+  float: left;
+}
+
+#osbitools .osbi_version {
+  float: right;
+}
+
+#osbitools .osbi-apps {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 2.5em;
+  font-weight: bold;
+  clear: both;
+}
+
+#osbitools .parent-table {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+#osbitools .vcenter-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#osbitools .error {
+  background-color: #FFAA90;
+}
+
+#osbitools .error-text {
+  color: #FF3C00;
+}
+
+#osbitools .success-text {
+  color: #3F913F;
+}
+
+#osbitools .warn-text {
+  color: orange;
+}
+
+#osbitools .ml5 {
+  margin-left: 5px;
+}
+
+#osbitools td.vcenter-middle {
+  vertical-align: middle;
+}
+
+#osbitools table.wrapper-wide {
+  width: 100%;
+  border: none;
+  border-spacing: 0;
+}
+
+#osbitools table.wrapper-wide>tbody>tr>td {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+#osbitools footer {
+  padding-top: 15px;
+  text-align: center;
+}
+
+#osbitools .dialog-header {
+  padding: 2px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#osbitools .dialog-sub-header {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#osbitools .dialog-text {
+  font-size: 1em;
+}
+
+#osbitools label.highlight {
+  color: #0045ff;
+}
+
+#osbitools .pad15 {
+  padding: 15px;
+}
+
+/***************** Big Dialog *****************/
+
+#osbitools .dialog-big {
+  padding: 15px;
+  display: none;
+  background: #F6F9D3;
+}
+
+#osbitools .dialog-big>form>table {
+  margin: auto;
+  border-spacing: 5px;
+}
+/***************** Phase Loader *****************/
+
+#osbitools .page_loader {
+  width: 100%;
+  padding: 40px 0;
+  text-align: center
+}
+
+
+/*********** Simple Dialogs ***********/
+
+#osbitools .dialog {
+  padding: 2px;
+  display: none;
+  background: #F6F9D3;
+}
+
+#osbitools .sd_ctrl {
+  margin-left: 4px;
+}
+
+#osbitools .sd_label,
+#osbitools .sd_ctrl button {
+  font-weight: bold;
+  padding-left: 2px;
+}
+
+#osbitools .sd_ctrl button.btn_cancel {
+  margin-left: 4px;  
+}
+
+#osbitools .btn-loading,
+#osbitools .btn-loading-min,
+#osbitools .btn-loading-right,
+#osbitools .btn-loading-left {
+  vertical-align: bottom;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-image: url(../images/loading_circle.gif);
+}
+
+#osbitools .btn-loading-min {
+  min-width: 12px;
+  height: 12px;
+  background-size: 12px 12px;
+}
+
+.btn-loading,
+.btn-loading-right,
+.btn-loading-left {
+  min-width: 19px;
+  height: 19px;
+  margin-top: 3px;
+  padding-left: 2px;
+  background-size: 19px 19px;
+}
+
+#osbitools .btn-loading-right {
+  background-position-x: right;
+}
+
+#osbitools .btn-loading-left {
+  background-position-x: left;
+}
+
+#osbitools input.upload-file {
+  background-color: white;
+}
+
+/*********** Error Window ***********/
+
+#osbitools .error_window {
+  padding: 2em;
+  visibility: inherit;
+}
+
+#osbitools .error_window .dialog-header {
+  margin-bottom: 0.5em;
+}
+
+#osbitools .error_window .dialog-sub-header {
+  padding-bottom: 5px;
+}
+
+#osbitools .error_window button.b-close {
+  background-color: #990D00;
+}
+
+#osbitools .error_window button.b-close:hover {
+  background-color: #241303;
+}
+
+#osbitools .btn_err_toggle {
+  margin: 5px;
+  padding: 0 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+#osbitools .btn_err_toggle img {
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#osbitools .err_info {
+  visibility: inherit;
+}
+
+#osbitools .err_details {
+  white-space: nowrap;
+}
+
+/*********** Success Window ***********/
+
+#osbitools .success_window {
+  padding: 12px 5px 3px 5px;
+  border: 2px solid #002F00;
+  background-color: #90EE90;
+  visibility: inherit;
+}
+
+#osbitools .success_window button.b-close {
+  background-color: #002F00;
+}
+
+#osbitools .success_window button.b-close:hover {
+  background-color: #006200;
+}
+
+/*********** Simple Dialog ***********/
+
+#osbitools .simple_dialog {
+  visibility: inherit;
+}
+
+/*********** Simple File Dialog ***********/
+
+#osbitools .simple_file_dialog {
+  visibility: inherit;
+}
+
+/*********** bPopup ***********/
+
+#osbitools button.b-close {
+  top: -12px;
+  right: -15px;
+  color: white;
+  cursor: pointer;
+  box-shadow: none;
+  padding: 0 6px 2px;
+  position: absolute;
+  font: bold 131% sans-serif;
+  border-radius: 7px;
+}
+
+

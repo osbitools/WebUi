@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--
+  Open Source Business Intelligence Tools - http://www.osbitools.com/
+  
+  Copyright 2014-2016 IvaLab Inc. and by respective contributors (see below).
+  
+  Released under the MIT license
+  http://opensource.org/licenses/MIT
+  
+  Contributors:
+  
+-->
+<html>
+  <head>
+    <title>OsBiTools Loader</title>
+    
+    <meta name="author" content="Igor Peonte">
+    <meta name="opyright" content="Copyright @2016 IvaLab Inc." />
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Shared jQuery & plugins CSS -->
+    <link href="shared/css/jquery/ui-lightness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Shared & Site css -->
+    <link href="shared/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="shared/css/site.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Shared jQuery & plugins -->
+    <script type="text/javascript" src="shared/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/jquery.loading.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/jquery.browser.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/jquery.bpopup.min.js"></script>
+
+    <!-- Shared Site scripts. Order is important -->
+    <script type="text/javascript" src="shared/js/osbitools-shared.js"></script>
+    <script type="text/javascript" src="shared/js/lang_set.js"></script>
+    <script type="text/javascript" src="shared/js/common.js"></script>
+    <script type="text/javascript" src="shared/js/locale_info.js"></script>
+        
+    <!-- login logic -->
+    <script type="text/javascript" src="js/lang_set.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    
+    <style>
+      /***************** Login Widget *****************/
+
+#login_wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+#login_widget {
+  width: 750px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 10%;
+  border-radius: 10px;
+  border: 2px solid #b8a698;
+}
+
+#login_header {
+  height: 90px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+#login_body {
+  padding: 10px;
+  border-width: 0;
+  margin-bottom: 0;
+}
+
+#login_body form {
+  margin-bottom: 0;
+}
+
+#login_form tbody > tr > td {
+  padding: 2px;
+}
+
+*********** Language Selector ***********/
+
+#lang_dd dd, #lang_dd dt, #lang_dd ul {
+  margin: 0px; 
+  padding: 0px;
+}
+
+#lang_dd dd {
+  position: relative;
+}
+
+#lang_dd dt a {
+  width: 100%;
+  outline:none;
+  color:#816c5b;
+  display: block;
+  border-radius: 5px;
+  text-decoration:none;
+  border: 1px solid #d4ca9a;
+  background: #e4dfcb url(../images/arrow.png) no-repeat scroll right center;
+}
+
+#lang_dd dt a span {
+  padding: 5px;
+  display: block;
+  text-align: left;
+}
+
+#lang_dd dd ul {
+  background: #e4dfcb none repeat scroll 0 0;
+  display: none;
+  list-style: none;
+  padding: 5px 0px;
+  position: absolute; 
+  left: 0px;
+  top: 2px;
+  width: auto;
+  min-width: 170px;
+}
+
+#lang_dd span.value {
+  display:none;
+}
+
+#lang_dd dd ul li {
+  clear: left;
+  cursor: pointer;
+}
+
+#lang_dd dd ul li a {
+  float: left;
+  padding: 5px;
+  display: block;
+  
+  outline: none;
+  color: #816c5b;
+  text-decoration: none;
+}
+
+#lang_dd dd ul li:hover {
+  background-color: #d0c9af;
+}
+
+#lang_dd dd ul li img {
+  padding: 6px 5px 4px 0;
+}
+
+/*********** Remember Me ***********/
+
+#ll_remember_me {
+  margin-left: 2px;
+  vertical-align: top;
+}
+
+#remember_me {
+  vertical-align: bottom;
+}
+      
+    </style>
+  </head>
+  <body id="osbitools">
+    
+    <!-- Login Widget -->
+    <div id="login_widget" class="hidden">
+      <div id="login_header">
+        <span id="osbi_title" class="osbi-header">OsBi Tools</span>
+        <span id="osbi_version" class="osbi-header"><!----></span>
+        <div class="osbi-apps" id="ll_tool_title"><!----></div>
+      </div>
+      <div id="login_body">
+        <table width="100%">
+          <tr>
+
+            <td align="center">
+              <form id="auth" name="auth" autocomplete="on">
+                <table id="login_form">
+                  <tr>
+                    <td align="right"><label for="usr" 
+                                id="ll_username"><!----></label>:&nbsp; </td>
+                    <td>
+                    <input id="usr" type="text" autocomplete="on" />
+                    </td>
+                  </tr>
+    
+                  <tr>
+                    <td align="right"><label for="pwd" 
+                                    id="ll_password"><!----></label>:&nbsp; </td>
+                    <td>
+                    <input id="pwd" type="password" />
+                    </td>
+                  </tr>
+    
+                  <!-- Optional language selection -->
+                  <tr id="lang_sel_wrapper" class="hidden">
+                    <td align="right"><label for="lang_dd" 
+                                id="ll_language"><!----></label>:&nbsp; </td>
+                    <td colspan="2" align="right">
+                      <dl id="lang_dd">
+                        <dt>
+                          <a href="#" id="lang" onclick="toggle_lang_sel()"><span
+                          id="lbl_lang_sel"><!----></span></a>
+                        </dt>
+                        <dd>
+                          <ul id="lang_sel"><!----></ul>
+                        </dd>
+                      </dl>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><!----></td>
+                    <td align="left">
+                    <input id="remember_me" type="checkbox" />
+                    <span id="ll_remember_me"><!----></span></td>
+                  </tr>
+                  <tr>
+                    <td id="login_ctrls" colspan="2" align="right">
+                      <button type="button" id="ll_sign_in"><!----></button>
+                    </td>
+                  </tr>
+                </table>
+              </form>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    
+    <!-- Error Window -->
+    <div id="error_window" class="ui-state-error ui-corner-all hidden">
+      <button class="b-close">X</button>
+
+      <h1 class="ui-state-error-text">
+        <span id="ll_error_c"><!----></span> #<span id="err_code"><!----></span>
+      </h1>
+      <h2 style="white-space: nowrap;">
+        <span id="err_details"><!----></span>
+        <span id="btn_err_toggle" onclick="toggle_error_details()">
+          <img class="bottom hidden" src="shared/images/icon_up.png" />
+          <img class="top" src="shared/images/icon_down.png" />
+        </span>
+      </h2>
+      <h3 id="err_info" class="hidden"><!----></h3>
+    </div>
+
+    <footer>&copy; Ivalab 2014-<span id="year"><!----></span></footer>
+  </body>
+</html>

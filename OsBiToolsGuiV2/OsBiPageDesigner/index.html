@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+  Open Source Business Intelligence Tools - http://www.osbitools.com/
+  
+  Copyright 2014-2016 IvaLab Inc. and by respective contributors (see below).
+  
+  Released under the MIT license
+  http://opensource.org/licenses/MIT
+  
+  Contributors:
+  
+-->
+<html>
+  <head>
+    <title>OsBiTools Loader</title>
+    
+    <meta name="author" content="Igor Peonte">
+    <meta name="Copyright" content="Copyright &copy; 2015 IvaLab Inc." />
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Shared jQuery & plugins CSS -->
+    <link href="shared/css/jquery/ui-lightness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Shared & Site css -->
+    <link href="shared/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="shared/css/site.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Shared jQuery & plugins -->
+    <script type="text/javascript" src="shared/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/jquery.loading.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/jquery.browser.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/jquery.filter_input.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/jquery.bpopup.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/jquery.glob.min.js"></script>
+        
+    <!-- Globalization  -->
+    <script type="text/javascript" src="shared/js/jquery/globinfo/jquery.glob.en-US.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/globinfo/jquery.glob.fr-CA.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/globinfo/jquery.glob.ru-RU.min.js"></script>
+    
+    <!-- Shared Site scripts. Order is important -->
+    <script type="text/javascript" src="shared/js/constants.js"></script>
+    <script type="text/javascript" src="shared/js/osbitools-shared.js"></script>
+    <script type="text/javascript" src="shared/js/lang_set.js"></script>
+    <script type="text/javascript" src="shared/js/phase_loader.js"></script>
+    <script type="text/javascript" src="shared/js/web_app.js"></script>
+    <script type="text/javascript" src="shared/js/common.js"></script>
+    <script type="text/javascript" src="shared/js/locale_info.js"></script>
+    <script type="text/javascript" src="shared/js/bootstrap.js"></script>
+    <script type="text/javascript" src="shared/js/ajax.js"></script>
+    
+    <!-- Main module. Needs to be created together with WEB_APP_CFG parameter -->
+    <script type="text/javascript" src="js/main.js"></script>
+    
+    <link href="modules/prj/css/jquery/ui.dynatree.css" rel="stylesheet" type="text/css" />
+    <link href="modules/prj/css/jquery/jquery.contextmenu.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="modules/prj/js/jquery/jquery.dynatree.min.js"></script>
+    <script type="text/javascript" src="modules/prj/js/jquery/jquery.contextmenu.min.js"></script>
+    <script type="text/javascript" src="modules/prj/js/jquery/jquery.form.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/jquery/jquery.jqplot.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery/jquery.dataTables.min.css" />
+    
+    <!-- jQPlot & plugins -->
+    <script type="text/javascript" src="js/jquery/jquery.jqplot.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jqplot/jqplot.barRenderer.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jqplot/jqplot.categoryAxisRenderer.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jqplot/jqplot.pointLabels.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jqplot/jqplot.canvasTextRenderer.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jqplot/jqplot.canvasAxisLabelRenderer.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jqplot/jqplot.canvasAxisTickRenderer.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jqplot/jqplot.dateAxisRenderer.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jqplot/jqplot.highlighter.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jqplot/jqplot.pieRenderer.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jqplot/jqplot.ohlcRenderer.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jqplot/jqplot.enhancedLegendRenderer.min.js"></script>
+    <!-- <script type="text/javascript" src="js/jquery/jqplot/jqplot.cursor.min.js"></script> -->
+
+    <!-- jQuery data visualization plugins -->
+    <script type="text/javascript" src="js/jquery/jquery.dataTables.min.js"></script>
+    
+    <!-- 3rd party shared -->
+    <script type="text/javascript" src="js/shared/jszip.min.js"></script>
+     
+    <!-- OsBiTools Web Widget processing -->
+    <script type="text/javascript" src="js/shared/lang_set.js"></script>
+    <script type="text/javascript" src="js/osbitools-wwg-shared.js"></script>
+    <script type="text/javascript" src="js/osbitools-pd.js"></script>
+    
+    <!-- Registration Library -->
+    <script type="text/javascript" src="js/registration.js"></script>
+
+    <script type="text/javascript">
+      RES_VERSION = "\
+2.2      ".trim();
+      
+      var REGISTER_URL = "http://localhost/register_demo_user";
+  
+      // Validate License Code
+      var VALIDATE_LICENSE_CODE_URL = "http://localhost/validate_license_code";
+    </script>
+
+  </head>
+  <body id="osbitools">
+  </body>
+</html>

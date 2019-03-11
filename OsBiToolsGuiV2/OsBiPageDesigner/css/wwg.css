@@ -1,0 +1,63 @@
+/* Run-time stylesheet */
+
+#osbitools table.wwg-error-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+#osbitools table.wwg-error-wrapper td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#osbitools span.wwg-error {
+  color: #ef6308;
+  font-weight: bold;
+}
+
+#osbitools img.timg {
+  vertical-align: bottom;
+}
+
+#osbitools div.body>div.container {
+  padding: 5px;
+}
+
+#osbitools div.wwg-chart>div.body {
+  min-width: 200px;
+  min-height: 200px;
+}
+
+#osbitools .chart-loading {
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-image: url(../images/loading_circle.gif);
+}
+
+/* jqPlot overwrite */
+
+#osbitools .jqplot-axis,
+#osbitools .jqplot-highlighter-tooltip, 
+#osbitools .jqplot-canvasOverlay-tooltip {
+  font-size: inherit;
+}
+
+#osbitools table.jqplot-table-legend, table.jqplot-cursor-legend {
+  font-size: inherit;
+  border-spacing: 4px;
+}
+
+#osbitools .jqplot-title {
+  font-size: 1.1em;
+}
+
+#osbitools .jqplot-axis {
+  font-size: .7em;
+}
+
+#osbitools .jqplot-highlighter-tooltip {
+  padding: 2px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}

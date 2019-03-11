@@ -1,0 +1,66 @@
+#osbitools div.com-osbitools-demo-tbl_hbar {
+  overflow-y: hidden;
+}
+
+#osbitools div.com-osbitools-demo-tbl_hbar>body {
+  width: 200px;
+  height: 200px;
+}
+
+#osbitools div.com-osbitools-demo-tbl_hbar table.tbl-hbar {
+  width: 100%;
+  color: black;
+  height: 100%;
+  padding: 2px;
+  border-spacing: 0.5pc;
+}
+
+#osbitools div.com-osbitools-demo-tbl_hbar tbody.tbl-hbars th {
+  width: 10%;
+  font-size: 1.2em;
+  text-align: right;
+  vertical-align: middle;
+  white-space: normal;
+}
+
+#osbitools div.com-osbitools-demo-tbl_hbar tbody.tbl-hbars td.hbar {
+  width: 100%;
+  position: relative;                                                   
+}
+
+#osbitools div.com-osbitools-demo-tbl_hbar tbody.tbl-hbars td.hbar-value {
+  font-size: 1.2em;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#osbitools div.com-osbitools-demo-tbl_hbar tbody.tbl-hbars tr.summary td {
+  vertical-align: middle;
+  font-size: 1.5em;
+}
+
+#osbitools div.com-osbitools-demo-tbl_hbar tbody.tbl-hbars tr.summary td.ll-summary {
+  text-align: left;
+  font-weight: bold;
+  white-space: normal;
+}
+
+#osbitools div.com-osbitools-demo-tbl_hbar tbody.tbl-hbars tr.summary td.value {
+  text-align: left;
+  font-weight: bold;
+}
+
+#osbitools div.com-osbitools-demo-tbl_hbar tbody.tbl-hbars 
+                              td.hbar div.hbar-wrapper table.hbar-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+#osbitools div.com-osbitools-demo-tbl_hbar tbody.tbl-hbars 
+                                        td.hbar div.hbar-wrapper {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
