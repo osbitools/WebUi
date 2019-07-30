@@ -59,7 +59,7 @@ function OsBiToolsWebBootstrap() {
   this.version = BOOT_VERSION.split(".");
   
   // Inject service widgets
-  $("#osbitools").html('' +
+  var wroot = $("#osbitools").html('' +
     '<div class="page_loader"></div>' +
     
     // WebApp Context
@@ -90,11 +90,19 @@ function OsBiToolsWebBootstrap() {
 
     '  <div class="dialog-header"><span class="ok_msg"></span></div>' +
     '</div>' +
+    
+    // Wait popup
+    // '<div class="wait-spinner">' + '</div>' +
+    '<img class="wait-spinner" src="">' +
 
-    '<footer><span class="copyright">&copy; Ivalab 2014-' + (new Date()).getFullYear() + 
-                        '</span><span class="osbi_version"></span></footer>'
+    '<footer><span class="copyright">&copy; Ivalab 2014-' +
+        (new Date()).getFullYear() + 
+            '</span><span class="osbi_version"></span></footer>'
   );
   
+  // Set waiting popup image
+  $("img.wait-spinner", wroot).attr("src",
+      ROOT_PATH + "shared/images/loading_circle.gif");
   
   // Last
   set_lang_labels();

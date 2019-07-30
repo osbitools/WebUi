@@ -16,15 +16,19 @@
 (function(osbi) {
   osbi.load_ll_set({
     LL_COM_OSBITOOLS_CONTAINERS_TAB_BOX_NAME: {
-      "en" : "Tab Box",
-      "fr" : "Tab Boîte",
-      "ru" : "Контейнер с закладкой"
+      "en": "Tab Box",
+      "fr": "Tab Boîte",
+      "ru": "Контейнер с закладкой",
+      "es": "Cuadro de tabulación",
+      "de": "Registerkartenfeld"
     },
   
     LL_COM_OSBITOOLS_CONTAINERS_TAB_BOX_DESCR: {
-      "en" : "Container with icon & tab like header",
-      "fr" : "Conteneur avec l'icône & onglet comme tête",
-      "ru" : "Контейнер с иконкой и заголовком в виде закладки"
+      "en": "Container with icon & tab like header",
+      "fr": "Conteneur avec l'icône & onglet comme tête",
+      "ru": "Контейнер с иконкой и заголовком в виде закладки",
+      "es": "Contenedor con icono y pestaña como encabezado",
+      "de": "Container mit Icon & Tab wie Header"
     },
   });
 })(jOsBiTools);

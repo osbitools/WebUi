@@ -199,7 +199,7 @@ MultiPropGroupInput.prototype.appendPropGroup = function() {
 MultiPropGroupInput.prototype.addPropGroupTab = function(idx, label, pgrp, fnew) {
   var me = this;
   var tab = $('<div class="grp-tab multi-grp-tab' + (fnew ? " new" : "") + '">' +
-    '<table><tr><td class="label">' + label + '</td>' +
+    '<table><tr><td class="grp-tab-label">' + label + '</td>' +
       '<td>' + (this.params.is_multi ? '<span class="ui-icon ui-icon-close' + 
         (!fnew ? " hidden" : "") + '" title="' + ts("LL_DELETE_TAB") +
         '" ></span>' : "") + '</td>' +
@@ -207,7 +207,7 @@ MultiPropGroupInput.prototype.addPropGroupTab = function(idx, label, pgrp, fnew)
   
   tab.data("idx", idx);
   
-  $("td.label", tab).on("click", function() {
+  $("td.grp-tab-label", tab).on("click", function() {
     me.selPropGroup(tab);
   });
   
@@ -300,7 +300,7 @@ MultiPropGroupInput.prototype.onPropGroupOrderChanged = function() {
   var cnt = 0;
   var me = this;
   $("div.multi-grp-tab", this.tabs).not(":hidden").each(function() {
-    $("td.label", this).html(me.getPropGroupLabelText(++cnt));
+    $("td.grp-tab-label", this).html(me.getPropGroupLabelText(++cnt));
   });
 
   this.setTabChanged();
@@ -329,7 +329,7 @@ MultiPropGroupInput.prototype.reIndexPropGroups = function() {
     var idx = el.data("idx");
     plist.push(me.plist[idx]);
     el.data("idx", cnt);
-    $("td.label", el).html(me.getPropGroupLabelText(++cnt));
+    $("td.grp-tab-label", el).html(me.getPropGroupLabelText(++cnt));
   });
   
   // Replace current prop group list
@@ -381,7 +381,7 @@ MultiPropGroupInput.prototype.doBeforeCancelEdit = function() {
           
           if (idx == 0) {
             var next = me.next();
-            $("td.label", me).html(this.getPropGroupLabelText(i + 1));
+            $("td.grp-tab-label", me).html(this.getPropGroupLabelText(i + 1));
             tmp.after(me);
             next.before(tmp);
           } else {

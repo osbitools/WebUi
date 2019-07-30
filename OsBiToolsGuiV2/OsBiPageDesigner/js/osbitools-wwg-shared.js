@@ -126,13 +126,20 @@
   osbi.get_app_ds_req = function(name) {
     return this.get_ds_req(name, WEB_APP.base.config.ds_item.url);
   };
-  
+
+  /**
+   * Get DataSet Request object
+   * Language parameter is always included.
+   * 
+   * @param name Map Name
+   * @param ds_host URL for DataSet host
+   */  
   osbi.get_ds_req = function(name, ds_host) {
     return (ds_host == "")
       // Internal
-      ? make_rel_req_ex("ds", name)
+      ? this.make_rel_req_ex("ds", name, {lang: this.lang})
       // External
-      : make_abs_req(ds_host + "ds/" + name);
+      : this.make_abs_req(ds_host + "ds/" + name + "?lang=" + this.lang);
   };
   
   /**************************************************/

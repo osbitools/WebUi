@@ -108,11 +108,9 @@ ProjectList.prototype.showProjSelDlg = function() {
 
 ProjectList.prototype.showNewProjDlg = function(is_new) {
   var me = this;
-  
-  show_simple_input_dialog({
+  var data = {
     btnOk: t("LL_CREATE"),
-    btnCancel: t((!is_new) ? "LL_CANCEL" : "LL_LOGOUT"),
-    modalClose: true,
+    modalClose: !is_new,
     filter: ID_FILTER.regex,
     onOk: function() {
       me.onNewProjectCreate();
@@ -121,14 +119,15 @@ ProjectList.prototype.showNewProjDlg = function(is_new) {
       success: function(pname) {
         me.onNewProjectCreateSuccess(pname);
       },
-      error: show_server_error,
-      cancel: function() {
-        if (is_new)
-          me.pmgr.bs.logout();
-      }
+      error: show_server_error
     },
     title: t("LL_PROJECT_NAME")
-  });
+  };
+  
+  if (!is_new)
+    data.btnCancel = t("LL_CANCEL");
+    
+  show_simple_input_dialog(data);
 };
 
 ProjectList.prototype.checkNewProject = function(http_type, error_id, prj) {

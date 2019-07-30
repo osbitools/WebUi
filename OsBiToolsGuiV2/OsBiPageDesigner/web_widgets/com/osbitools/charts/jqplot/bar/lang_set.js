@@ -16,25 +16,33 @@
     LL_COM_OSBITOOLS_CHARTS_JQPLOT_BAR_NAME: {
       "en" : "Bar",
       "fr" : "Bande",
-      "ru" : "Столб"
+      "ru" : "Столб",
+      "es": "Bar",
+      "de": "Bar"
     },
 
     LL_COM_OSBITOOLS_CHARTS_JQPLOT_BAR_DESCR: {
       "en" : "Bar Chart",
       "fr" : "Diagramme à Bandes",
-      "ru" : "Столбчатые диаграмма"
+      "ru" : "Столбчатые диаграмма",
+      "es": "Gráfico de barras",
+      "de": "Balkendiagramm"
     },
     
     LL_BAR_COLORS: {
       "en": "Bar Colors",
       "fr": "Couleurs de la Barre",
-      "ru": "Цвет Столбцов"
+      "ru": "Цвет Столбцов",
+      "es": "Colores de barra",
+      "de": "Balkenfarben"
     },
     
     LL_EXCLUDE_COLUMNS: {
       "en": "Columns list to exclude",
       "fr": "Colonnes liste à exclure",
-      "ru": "Список Столбцов для исключения"
+      "ru": "Список Столбцов для исключения",
+      "es": "Lista de columnas para excluir",
+      "de": "Auszuschließende Spaltenliste"
     }
   });
 })(jOsBiTools);

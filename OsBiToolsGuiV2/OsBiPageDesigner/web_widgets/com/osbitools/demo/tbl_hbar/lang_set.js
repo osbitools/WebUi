@@ -19,27 +19,35 @@
     LL_COM_OSBITOOLS_DEMO_TBL_HBAR_NAME: {
       "en": "Table Bars",
       "fr": "Tableau barres",
-      "ru": "Табличные столбики"
+      "ru": "Табличные столбики",
+      "es": "Barras de mesa",
+      "de": "Tischleisten"
     },
     
     // Description for wwg shown in the component panel
     LL_COM_OSBITOOLS_DEMO_TBL_HBAR_DESCR: {
       "en": "Table Horizontal Bars",
       "fr": "Tableau barres horizontales",
-      "ru": "Табличные горизонтальные столбики"
+      "ru": "Табличные горизонтальные столбики",
+      "es": "Barras horizontales de mesa",
+      "de": "Tabelle horizontale Balken"
     },
     
     // Web Widget properties
     LL_SHOW_BAR_VALUES: {
       "en": "Show bar values",
       "fr": "Afficher les valeurs de bar",
-      "ru": "Показывать значения столбиков"
+      "ru": "Показывать значения столбиков",
+      "es": "Mostrar valores de barra",
+      "de": "Balkenwerte anzeigen"
     },
     
     LL_SHOW_SUMMARY_ROW: {
       "en": "Show summary row",
       "fr": "Afficher le résumé rangée",
-      "ru": "Показывать строку с суммарным значением"
+      "ru": "Показывать строку с суммарным значением",
+      "es": "Mostrar fila de resumen",
+      "de": "Übersichtszeile anzeigen"
     }
   });
 })(jOsBiTools);

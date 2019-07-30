@@ -16,15 +16,19 @@
 (function(osbi) {
   osbi.load_ll_set({
     LL_COM_OSBITOOLS_CONTAINERS_UTILITY_NAME: {
-      "en" : "Utility Box",
-      "fr" : "Boîte utilitaire",
-      "ru" : "Полезная Коробка"
+      "en": "Utility Box",
+      "fr": "Boîte utilitaire",
+      "ru": "Полезная Коробка",
+      "es": "Caja de utilidad",
+      "de": "Utility Box"
     },
   
     LL_COM_OSBITOOLS_CONTAINERS_UTILITY_DESCR: {
-      "en" : "Invisible Container",
-      "fr" : "Invisible Container",
-      "ru" : "Прозрачный Контейнер"
+      "en": "Invisible Container",
+      "fr": "Invisible Container",
+      "ru": "Прозрачный Контейнер",
+      "es": "Contenedor invisible",
+      "de": "Unsichtbarer Behälter"
     },
   });
 })(jOsBiTools);

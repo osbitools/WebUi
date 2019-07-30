@@ -42,9 +42,11 @@ NumberInput.prototype.getChangeEvent = function() {
 };
 
 NumberInput.prototype.setValue = function(value) {
-  // Ignore empty string
   if (value != "")
     AbstractInputType.prototype.setValue.call(this, value);
+  else
+    // Reset field
+    AbstractInputType.prototype.resetValue.call(this);
 };
 
 // Register input control constructor in global array

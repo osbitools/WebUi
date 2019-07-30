@@ -209,7 +209,7 @@ PrjMgr.prototype.addSrvDialogs = function(frame) {
         '<button type="submit" class="ll_upload upload" ' +
           'disabled="">' + t('LL_UPLOAD') + '</button>' +
         '<button type="button" class="ll_upload_cancel upload" >' +
-          t('LL_UPLOAD_CANCEL') + '</button>' +
+          t('LL_CANCEL') + '</button>' +
       '</div>' +
     '</form>' +
   '</div>' +

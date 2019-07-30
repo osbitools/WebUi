@@ -600,18 +600,26 @@
   };
 
   osbi.sys_wwg["base"].prototype.setHeight = function(value) {
-    if (!is_empty(value) && !isNaN(value))
+    if (value == "")
+      this.body_ctx.css("height", "");
+    else if (!is_empty(value) && !isNaN(value))
       this.body_ctx.css("height", value);
   };
   
   osbi.sys_wwg["base"].prototype.setWidth = function(value) {
-    if (!is_empty(value) && !isNaN(value))
+    if (value == "")
+      this.body_ctx.css("width", "");
+    else if (!is_empty(value) && !isNaN(value))
       this.body_ctx.css("width", value);
   };
   
   osbi.sys_wwg["base"].prototype.setPadding = function(dir, value) {
-    if (!is_empty(value) && !isNaN(value))
-      this.body_ctx.css("padding-" + dir, value + "em");
+    var pname = "padding-" + dir;
+    
+    if (value == "")
+      this.body_ctx.css(pname, "");
+    else if (!is_empty(value) && !isNaN(value))
+      this.body_ctx.css(pname, value + "em");
   };
   
   /**************************************************/

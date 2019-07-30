@@ -1,19 +1,18 @@
-#osbitools div.com-osbitools-containers-tab_box>div.title {
+.osbitools div.com-osbitools-containers-tab_box>div.title {
   padding: 2px 5px;
-  /* color: #e7e7e7; */
+  border-spacing: 2px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border: 2px solid #b8a698;
   border-bottom: none;
   margin-bottom: -2px;
-  /* display: inline-block; */
   background: white;
   display: table;
   position: relative;
   z-index: 1;
 }
 
-#osbitools div.com-osbitools-containers-tab_box>div.title>span.ttext {
+.osbitools div.com-osbitools-containers-tab_box>div.title>span.ttext {
   padding: 0 5px;
   display: table-cell;
   vertical-align: middle;
@@ -21,15 +20,14 @@
   font-weight: bold;
 }
 
-#osbitools div.com-osbitools-containers-tab_box>div.body {
-  color: #e7e7e7;
+.osbitools div.com-osbitools-containers-tab_box>div.body {
   border: 2px solid #b8a698;
   border-bottom-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-#osbitools div.com-osbitools-containers-tab_box.selected>div.title,
-#osbitools div.com-osbitools-containers-tab_box.selected>div.body {
+.osbitools div.com-osbitools-containers-tab_box.selected>div.title,
+.osbitools div.com-osbitools-containers-tab_box.selected>div.body {
   border-color: #573A24;
 }

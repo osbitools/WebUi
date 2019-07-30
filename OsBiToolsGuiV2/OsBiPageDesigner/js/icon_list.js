@@ -132,8 +132,8 @@ IconList.prototype.onUploadFileSelected = function(name) {
 };
 
 IconList.prototype.getUploadFileUrl = function(fname) {
-  return BASE_URL + WEB_APP.base.URL_LIST.EX_FILE + 
-      WEB_APP.base.plist.getProject().getName() + "." + fname + "&dname=icons";
+  return make_rel_req_path(WEB_APP.base.URL_LIST.EX_FILE, "icons/" + 
+      WEB_APP.base.plist.getProject().getName() + "." + fname);
 };
 
 IconList.prototype.b4UploadFile = function(fname) {

@@ -1,0 +1,8 @@
+    <link href="modules/prj/css/jquery/ui.dynatree.css" rel="stylesheet" type="text/css" />
+    <link href="modules/prj/css/jquery/jquery.contextmenu.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="modules/prj/js/jquery/jquery.dynatree.min.js"></script>
+    <script type="text/javascript" src="modules/prj/js/jquery/jquery.contextmenu.min.js"></script>
+    <script type="text/javascript" src="modules/prj/js/jquery/jquery.form.min.js"></script>
+
+    <!--#include virtual="custom_prj.shtml" -->

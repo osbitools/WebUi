@@ -18,25 +18,33 @@
     LL_COM_OSBITOOLS_CHARTS_JQPLOT_LINE_NAME: {
       "en": "Line",
       "fr": "Ligne",
-      "ru": "Линия"
+      "ru": "Линия",
+      "es": "Línea",
+      "de": "Linie"
     },
   
     LL_COM_OSBITOOLS_CHARTS_JQPLOT_LINE_DESCR: {
       "en": "Line Chart",
       "fr": "Graphique en ligne",
-      "ru": "Линейный График"
+      "ru": "Линейный График",
+      "es": "Gráfico de linea",
+      "de": "Liniendiagramm"
     },
     
     LL_SMOOTH: {
       "en": "Smooth",
       "fr": "Lisse",
-      "ru": "Сглаживание"
+      "ru": "Сглаживание",
+      "es": "Suave",
+      "de": "Glatt"
     },
     
     LL_ENFORCE_MM: {
       "en": "Enforce Min/Max range",
       "fr": "Appliquer Min/Max Plage",
-      "ru": "Обеспечить соблюдение мин/max диапазона"
+      "ru": "Обеспечить соблюдение мин/max диапазона",
+      "es": "Aplicar rango mínimo/máximo",
+      "de": "Min/Max-Bereich erzwingen"
     }
   });
 })(jOsBiTools);

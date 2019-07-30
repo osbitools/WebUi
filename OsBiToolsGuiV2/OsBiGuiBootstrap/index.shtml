@@ -41,6 +41,8 @@
     <script type="text/javascript" src="shared/js/jquery/globinfo/jquery.glob.en-US.min.js"></script>
     <script type="text/javascript" src="shared/js/jquery/globinfo/jquery.glob.fr-CA.min.js"></script>
     <script type="text/javascript" src="shared/js/jquery/globinfo/jquery.glob.ru-RU.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/globinfo/jquery.glob.es-ES.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/globinfo/jquery.glob.de-DE.min.js"></script>
     
     <!-- Shared Site scripts. Order is important -->
     <script type="text/javascript" src="shared/js/constants.js"></script>
@@ -56,56 +58,9 @@
     <!-- Main module. Needs to be created together with WEB_APP_CFG parameter -->
     <script type="text/javascript" src="js/main.js"></script>
     
-    <link href="modules/prj/css/jquery/ui.dynatree.css" rel="stylesheet" type="text/css" />
-    <link href="modules/prj/css/jquery/jquery.contextmenu.css" rel="stylesheet" type="text/css" />
-
-    <script type="text/javascript" src="modules/prj/js/jquery/jquery.dynatree.min.js"></script>
-    <script type="text/javascript" src="modules/prj/js/jquery/jquery.contextmenu.min.js"></script>
-    <script type="text/javascript" src="modules/prj/js/jquery/jquery.form.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="css/jquery/jquery.jqplot.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/jquery/jquery.dataTables.min.css" />
-    
-    <!-- jQPlot & plugins -->
-    <script type="text/javascript" src="js/jquery/jquery.jqplot.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jqplot/jqplot.barRenderer.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jqplot/jqplot.categoryAxisRenderer.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jqplot/jqplot.pointLabels.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jqplot/jqplot.canvasTextRenderer.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jqplot/jqplot.canvasAxisLabelRenderer.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jqplot/jqplot.canvasAxisTickRenderer.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jqplot/jqplot.dateAxisRenderer.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jqplot/jqplot.highlighter.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jqplot/jqplot.pieRenderer.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jqplot/jqplot.ohlcRenderer.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jqplot/jqplot.enhancedLegendRenderer.min.js"></script>
-    <!-- <script type="text/javascript" src="js/jquery/jqplot/jqplot.cursor.min.js"></script> -->
-
-    <!-- jQuery data visualization plugins -->
-    <script type="text/javascript" src="js/jquery/jquery.dataTables.min.js"></script>
-    
-    <!-- 3rd party shared -->
-    <script type="text/javascript" src="js/shared/jszip.min.js"></script>
-     
-    <!-- OsBiTools Web Widget processing -->
-    <script type="text/javascript" src="js/shared/lang_set.js"></script>
-    <script type="text/javascript" src="js/osbitools-wwg-shared.js"></script>
-    <script type="text/javascript" src="js/osbitools-pd.js"></script>
-    
-    <!-- Registration Library -->
-    <script type="text/javascript" src="js/registration.js"></script>
-
-    <script type="text/javascript">
-      RES_VERSION = "\
-2.2      ".trim();
-      
-      var REGISTER_URL = "http://localhost/register_demo_user";
-  
-      // Validate License Code
-      var VALIDATE_LICENSE_CODE_URL = "http://localhost/validate_license_code";
-    </script>
+    <!--#include virtual="custom.shtml" -->
 
   </head>
-  <body id="osbitools">
+  <body id="osbitools" class="osbitools">
   </body>
 </html>

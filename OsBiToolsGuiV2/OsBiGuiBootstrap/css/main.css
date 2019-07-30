@@ -1,8 +1,8 @@
-#osbitools .demo {
+.osbitools .demo {
   color: gray;
 }
 
-#osbitools #login_header {
+.osbitools #login_header {
   background-color: #fff3fe;
 }
 

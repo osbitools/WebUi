@@ -1,9 +1,9 @@
-#osbitools div.com-osbitools-containers-utility>table>tbody>tr>td.body-wrapper>div.body {
+.osbitools div.com-osbitools-containers-utility>table>tbody>tr>td.body-wrapper>div.body {
   border: 2px solid #b8a698;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-#osbitools div.com-osbitools-containers-utility.selected>table>tbody>tr>td.body {
+.osbitools div.com-osbitools-containers-utility.selected>table>tbody>tr>td.body {
   border-color: #573A24;
 }

@@ -28,6 +28,14 @@ var LANG_SET = {
   "ru-RU": {
     "name": "Русский",
     "lang": "ru"
+  },
+  "es-ES": {
+    "name": "Español",
+    "lang": "es"
+  },
+  "de-DE": {
+    "name": "Deutsche",
+    "lang": "de"
   }
 };
 
@@ -35,21 +43,43 @@ var LANG_SET = {
 var LANG_SET_TITLES = {
   "en": {
     "en": "English",
-    "fr": "",
-    "ru": ""
+    "fr": "Anglais",
+    "ru": "Английский",
+    "es": "Inglés",
+    "de": "Englisch"
   },
   
   "fr": {
     "en": "French",
     "fr": "Français",
-    "ru": ""
+    "ru": "Французкий",
+    "es": "Francés",
+    "de": "Französisch"
   },
   
   "ru": {
     "en": "Russian",
-    "fr": "",
-    "ru": "Русский"
-  }  
+    "fr": "Russe",
+    "ru": "Русский",
+    "es": "Ruso",
+    "de": "Russisch"
+  },
+  
+  "es": {
+    "en": "Spanish",
+    "fr": "Espanol",
+    "ru": "Испанский",
+    "es": "Español",
+    "de": "Spanisch"
+  },
+  
+  "de": {
+    "en": "German",
+    "fr": "Allemand",
+    "ru": "Немецкий",
+    "es": "Alemán",
+    "de": "Deutsche"
+  }
 };
 
 function toggle_lang_sel() {

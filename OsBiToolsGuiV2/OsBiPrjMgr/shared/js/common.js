@@ -29,7 +29,7 @@ var DEFAULT_BASE_URL = "api/v" + API_VERSION + "/";
 var APP_JSON_UTF8 = "application/json; charset=UTF-8";
 
 // RegEx for ID field
-var ID_REGEX = 'a-zA-Z0-9_';
+var ID_REGEX = 'a-zA-Z0-9_-';
 
 // ID Filter
 var ID_FILTER = {
@@ -89,7 +89,7 @@ var DATE_FILTER = {
 // International Labels Filter
 var LL_FILTER = {
   regex: '[a-zA-Z0-9_]',
-  info: "LL_LL_FILTER_INFO",
+  info: "LL_ID_FILTER_INFO",
 };
 
 var COLOR_REGEX = '#a-fA-F0-9';
@@ -258,16 +258,21 @@ function simple_dialog_prepare(params, input) {
   
   $(".sd_label", sdialog).html(params.title);
   
-  
   $(".btn_ok", sdialog).html(params.btnOk);
   $(".btn_ok", sdialog).click(function() {
     params.onOk();
   });
   
-  $(".btn_cancel", sdialog).html(params.btnCancel);
-  $(".btn_cancel", sdialog).attr("disabled", !params.modalClose);
+  var btnc = $(".btn_cancel", sdialog);
+  if (params.btnCancel !== undefined) {
+    btnc.html(params.btnCancel);
+    btnc.attr("disabled", !params.modalClose);
+    btnc.show();
+  } else {
+    btnc.hide();
+  }
   
-  $(".btn_cancel", sdialog).click(function() {
+  btnc.click(function() {
     // Hide dialog
     SDIALOG.close();
     if (typeof params.onCancel == "function")
@@ -342,6 +347,19 @@ function enable_wait_btn(id, direction) {
         (direction === undefined ? "" : "-" + direction));
 }
 
+function enable_wait_popup() {
+  var el = $("#osbitools .wait-spinner");
+  
+  // Register popup
+  $("#osbitools").data("popup", el);
+  
+  el.bPopup({
+    appendTo: "#osbitools",
+    modalClose: false,
+    escClose: false,
+  });
+}
+
 function disable_wait_btns(id, direction) {
   disable_wait_btns_ex($("#osbitools ." + id), direction);
 }
@@ -361,6 +379,14 @@ function disable_wait_btn(id, direction) {
   el.show();
   el.parent().removeClass("btn-loading" + 
         (direction === undefined ? "" : "-" + direction));
+}
+
+function disable_wait_popup() {
+  var el = $("#osbitools .wait-spinner");
+  el.bPopup().close();
+  
+  // Unregister popup
+  $("#osbitools").removeData("popup");
 }
 
 /**************** Success Window ****************/
@@ -440,6 +466,11 @@ function show_ajax_error_ex(error_id, ajax_error, cfield) {
 }
 
 function show_error_win(id, detail, info, cfield) {
+  // Check if any popup registered
+  var bpop = $("#osbitools").data("popup");
+  if (bpop !== undefined)
+    bpop.bPopup().close();
+      
   $("#osbitools .err_code").html(id);
   $("#osbitools .err_details").html(detail);
   
@@ -1093,61 +1124,31 @@ function _get(url, on_success, on_error) {
     }
   });
 }
+
 function make_rel_req_base() {
-  return {
-    abs: false
-  };
+  return jOsBiTools.make_rel_req_base();
 }
 
 function make_abs_req(url) {
-  return {
-    abs: true,
-    url: url
-  };
+  return jOsBiTools.make_abs_req(url);
 }
 
 function make_abs_req_query(url, query_params) {
-  if (query_params !== undefined) {
-      var qs = "";
-      for (var key in query_params)
-        qs += "&" + key + "=" + query_params[key];
-        
-      if (qs.length != "")
-        url += "?" + qs.substr(1);
-    }
-    
-  return make_abs_req(url);
+  return jOsBiTools.make_abs_req_query(url, query_params);
 }
 
 function make_rel_req(api) {
-  var res = make_rel_req_base();
-  res.api_name = api;
-  return res;
+  return jOsBiTools.make_rel_req(api);
 }
 
 function make_rel_req_path(api, path_param, data) {
-  var res = make_rel_req(api);
-  if (path_param !== undefined)
-    res.path_params = path_param.split("/");
-  
-  if (data != undefined)
-    res.data = data;
-    
-  return res;
+  return jOsBiTools.make_rel_req_path(api, path_param, data);
 }
 
 function make_rel_req_query(api, query_params, data) {
-  var res = make_rel_req(api);
-  res.query_params = query_params;
-  
-  if (data != undefined)
-    res.data = data;
-    
-  return res;
+  return jOsBiTools.make_rel_req_query(api, query_params, data);
 }
 
 function make_rel_req_ex(api, path_param, query_params, data) {
-  var res = make_rel_req_path(api, path_param, data);
-  res.query_params = query_params;
-  return res;
+  return jOsBiTools.make_rel_req_ex(api, path_param, query_params, data);
 }

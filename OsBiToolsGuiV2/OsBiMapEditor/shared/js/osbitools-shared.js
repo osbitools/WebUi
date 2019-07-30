@@ -25,7 +25,9 @@
   DEF_LANG_LOCALES = {
     "en" : "US",
     "fr" : "CA",
-    "ru" : "RU"
+    "ru" : "RU",
+    "es" : "ES",
+    'de' : "DE"
   },
 
   // Default language
@@ -365,6 +367,69 @@
     return value;
   };
   
+  /*******************************************/
+  /**  jOsBiTools  Ajax Service Functions   **/
+  /*******************************************/
+ 
+  jOsBiTools.prototype.make_rel_req_base = function() {
+    return {
+      abs: false
+    };
+  };
+
+  jOsBiTools.prototype.make_abs_req = function(url) {
+    return {
+      abs: true,
+      url: url
+    };
+  };
+
+  jOsBiTools.prototype.make_abs_req_query = function(url, query_params) {
+    if (query_params !== undefined) {
+        var qs = "";
+        for (var key in query_params)
+          qs += "&" + key + "=" + query_params[key];
+          
+        if (qs.length != "")
+          url += "?" + qs.substr(1);
+      }
+      
+    return this.make_abs_req(url);
+  };
+
+  jOsBiTools.prototype.make_rel_req = function(api) {
+    var res = this.make_rel_req_base();
+    res.api_name = api;
+    return res;
+  };
+
+  jOsBiTools.prototype.make_rel_req_path = function(api, path_param, data) {
+    var res = this.make_rel_req(api);
+    if (path_param !== undefined)
+      res.path_params = path_param.split("/");
+    
+    if (data != undefined)
+      res.data = data;
+      
+    return res;
+  };
+
+  jOsBiTools.prototype.make_rel_req_query = function(api, query_params, data) {
+    var res = this.make_rel_req(api);
+    res.query_params = query_params;
+    
+    if (data != undefined)
+      res.data = data;
+      
+    return res;
+  };
+
+  jOsBiTools.prototype.make_rel_req_ex = function(api, path_param, query_params, data) {
+    var res = this.make_rel_req_path(api, path_param, data);
+    res.query_params = query_params;
+    return res;
+  };
+
   /*******************************************/
   /**     jOsBiTools  sprintf Functions     **/
   /*******************************************/

@@ -11,106 +11,106 @@
  */
 
 /* Reset CSS */
-#osbitools body,
-#osbitools div,
-#osbitools span,
-#osbitools applet,
-#osbitools object,
-#osbitools iframe,
-#osbitools h1,
-#osbitools h2,
-#osbitools h3,
-#osbitools h4,
-#osbitools h5,
-#osbitools h6,
-#osbitools p,
-#osbitools blockquote,
-#osbitools pre,
-#osbitools a,
-#osbitools abbr,
-#osbitools acronym,
-#osbitools address,
-#osbitools big,
-#osbitools cite,
-#osbitools code,
-#osbitools del,
-#osbitools dfn,
-#osbitools em,
-#osbitools img,
-#osbitools ins,
-#osbitools kbd,
-#osbitools q,
-#osbitools s,
-#osbitools samp,
-#osbitools small,
-#osbitools strike,
-#osbitools strong,
-#osbitools sub,
-#osbitools sup,
-#osbitools tt,
-#osbitools var,
-#osbitools b,
-#osbitools u,
-#osbitools i,
-#osbitools center,
-#osbitools dl,
-#osbitools dt,
-#osbitools dd,
-#osbitools ol,
-#osbitools ul,
-#osbitools li,
-#osbitools fieldset,
-#osbitools form,
-#osbitools label,
-#osbitools legend,
-#osbitools table,
-#osbitools caption,
-#osbitools tbody,
-#osbitools tfoot,
-#osbitools thead,
-#osbitools tr,
-#osbitools th,
-#osbitools td,
-#osbitools article,
-#osbitools aside,
-#osbitools canvas,
-#osbitools details,
-#osbitools embed,
-#osbitools figure,
-#osbitools figcaption,
-#osbitools footer,
-#osbitools header,
-#osbitools hgroup,
-#osbitools menu,
-#osbitools nav,
-#osbitools output,
-#osbitools ruby,
-#osbitools section,
-#osbitools summary,
-#osbitools time,
-#osbitools mark,
-#osbitools audio,
-#osbitools video {
+.osbitools body,
+.osbitools div,
+.osbitools span,
+.osbitools applet,
+.osbitools object,
+.osbitools iframe,
+.osbitools h1,
+.osbitools h2,
+.osbitools h3,
+.osbitools h4,
+.osbitools h5,
+.osbitools h6,
+.osbitools p,
+.osbitools blockquote,
+.osbitools pre,
+.osbitools a,
+.osbitools abbr,
+.osbitools acronym,
+.osbitools address,
+.osbitools big,
+.osbitools cite,
+.osbitools code,
+.osbitools del,
+.osbitools dfn,
+.osbitools em,
+.osbitools img,
+.osbitools ins,
+.osbitools kbd,
+.osbitools q,
+.osbitools s,
+.osbitools samp,
+.osbitools small,
+.osbitools strike,
+.osbitools strong,
+.osbitools sub,
+.osbitools sup,
+.osbitools tt,
+.osbitools var,
+.osbitools b,
+.osbitools u,
+.osbitools i,
+.osbitools center,
+.osbitools dl,
+.osbitools dt,
+.osbitools dd,
+.osbitools ol,
+.osbitools ul,
+.osbitools li,
+.osbitools fieldset,
+.osbitools form,
+.osbitools label,
+.osbitools legend,
+.osbitools table,
+.osbitools caption,
+.osbitools tbody,
+.osbitools tfoot,
+.osbitools thead,
+.osbitools tr,
+.osbitools th,
+.osbitools td,
+.osbitools article,
+.osbitools aside,
+.osbitools canvas,
+.osbitools details,
+.osbitools embed,
+.osbitools figure,
+.osbitools figcaption,
+.osbitools footer,
+.osbitools header,
+.osbitools hgroup,
+.osbitools menu,
+.osbitools nav,
+.osbitools output,
+.osbitools ruby,
+.osbitools section,
+.osbitools summary,
+.osbitools time,
+.osbitools mark,
+.osbitools audio,
+.osbitools video {
   margin: 0;
   padding: 0;
   border: 0;
   vertical-align: baseline;
 }
 
-#osbitools {
+.osbitools {
   font-size: 16px;
   line-height: normal;
   font-family: 'Open Sans', sans-serif;
 }
 
-#osbitools select, 
-#osbitools button,
-#osbitools input,
-#osbitools textarea {
+.osbitools select, 
+.osbitools input,
+.osbitools textarea {
   margin: 0;
   width: auto;
   height: auto;
   padding: 1px;
+  color:#000000;
   font-size: 1em;
   border-radius: 5px;
   line-height: normal;
@@ -118,20 +118,25 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-#osbitools button {
+.osbitools input[type=color] {
+  width: 1em;
+  height: 1em;
+}
+
+.osbitools button {
   padding: 1px 6px;
 }
 
-#osbitools table {
+.osbitools table {
   border-spacing: 0;
   border-collapse: separate;
 }
 
-#osbitools label {
+.osbitools label {
   display: inline;
   line-height: normal;
 }
 
-#osbitools label.bold {
+.osbitools label.bold {
   font-weight: bold;
 }

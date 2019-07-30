@@ -41,6 +41,8 @@
     <script type="text/javascript" src="shared/js/jquery/globinfo/jquery.glob.en-US.min.js"></script>
     <script type="text/javascript" src="shared/js/jquery/globinfo/jquery.glob.fr-CA.min.js"></script>
     <script type="text/javascript" src="shared/js/jquery/globinfo/jquery.glob.ru-RU.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/globinfo/jquery.glob.es-ES.min.js"></script>
+    <script type="text/javascript" src="shared/js/jquery/globinfo/jquery.glob.de-DE.min.js"></script>
     
     <!-- Shared Site scripts. Order is important -->
     <script type="text/javascript" src="shared/js/constants.js"></script>
@@ -56,15 +58,9 @@
     <!-- Main module. Needs to be created together with WEB_APP_CFG parameter -->
     <script type="text/javascript" src="js/main.js"></script>
     
-    <link href="modules/prj/css/jquery/ui.dynatree.css" rel="stylesheet" type="text/css" />
-    <link href="modules/prj/css/jquery/jquery.contextmenu.css" rel="stylesheet" type="text/css" />
-
-    <script type="text/javascript" src="modules/prj/js/jquery/jquery.dynatree.min.js"></script>
-    <script type="text/javascript" src="modules/prj/js/jquery/jquery.contextmenu.min.js"></script>
-    <script type="text/javascript" src="modules/prj/js/jquery/jquery.form.min.js"></script>
-
+    <!--#include virtual="custom.shtml" -->
 
   </head>
-  <body id="osbitools">
+  <body id="osbitools" class="osbitools">
   </body>
 </html>

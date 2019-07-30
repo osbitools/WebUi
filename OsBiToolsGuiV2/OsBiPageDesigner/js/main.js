@@ -61,6 +61,7 @@ var WEB_APP_CFG = {
     116: "LL_ERROR_EMPTY_DATASET_MAP_LIST",
     117: "LL_ERROR_NEW_USER_REG",
     118: "LL_ERROR_LICENCE_CODE_VALIDATION",
+    119: "LL_ERROR_EXPORT_SERVICE_UNAVAIL",
     
     149: "LL_ERROR_INVALID_PROP_VALUE"
   },
@@ -106,6 +107,14 @@ var WEB_APP_CFG = {
         icon: ROOT_PATH + 'images/export.png',
         action:function() { 
           WEB_APP.base.getCurrentEntity().export("js_embedded");
+        } 
+      },
+      
+      {
+        label: ts("LL_EXPORT_TO_LIFERAY_PORTLET"),
+        icon: ROOT_PATH + 'images/export.png',
+        action:function() { 
+          WEB_APP.base.getCurrentEntity().export("portlet");
         } 
       }
     ]
@@ -173,59 +182,85 @@ OsBiPageDesigner.prototype.init = function() {
   
   this.pmgr.showProjectList();
   
-  // TODO Combine both registration window and post-registration window into the same dialog
-  
   // Append registration dialog
-  this.pmgr.reg_win = $('<div class="reg-win hidden-block wrapper dialog-big"></div>');
-  $("#osbitools").append(this.pmgr.reg_win);
-  this.addRegWin(this.pmgr.reg_win);
+  this.pmgr.reg_win = this.initLicenseWin("reg-win",
+      "register", this.addRegWin, this.onRegistration);
   
   // Append post-registration dialog
-  this.pmgr.post_reg = $('<div class="post-reg-win hidden-block wrapper dialog-big"></div>');
-  $("#osbitools").append(this.pmgr.post_reg);
-  this.addPostRegWin(this.pmgr.post_reg);
+  this.pmgr.post_reg = this.initLicenseWin("post-reg-win",
+      "post_register", this.addPostRegWin, this.onLicenseCodeValidation);
   
-  var rwin = $(this.pmgr.reg_win);
-  $(".btn-cancel", this.pmgr.reg_win).click(function() {
-    rwin.bPopup().close();
-  });
-  
-  $(".btn-submit", this.pmgr.reg_win).click(function() {
-    rwin.bPopup().close();
-    rwin.data("res", true);
-  });
-  
-  this.pmgr.reg_win.data("register", function(data) {
-    me.onRegistration(data);
-  });
-  
-  var prwin = $(this.pmgr.post_reg);
-  $(".btn-cancel", this.pmgr.post_reg).click(function() {
-    prwin.bPopup().close();
-  });
-  
-  $(".btn-submit", this.pmgr.post_reg).click(function() {
-    prwin.bPopup().close();
-    prwin.data("res", true);
-  });
-  
-  this.pmgr.post_reg.data("post_register", function(data) {
-    me.onLicenseCodeValidation(data);
-  }); 
+ // Append license expired/renewal dialog
+  this.pmgr.license_renewal = this.initLicenseWin("license-renewal-win",
+      "license_renewal", this.addLicenseRenewalWin, this.onLicenseRenewal);
 };
 
-OsBiPageDesigner.prototype.showPostRegWin = function() {
+OsBiPageDesigner.prototype.initLicenseWin = function(cname, pname, ladd, lproc) {
+  // Append registration dialog
+  var win = $('<div class="' + cname +
+        ' hidden-block wrapper dialog-big"></div>');
+  $("#osbitools").append(win);
+  ladd.call(this, win);
+  
+  $(".btn-cancel", win).click(function() {
+    win.bPopup().close();
+  });
+  
+  $(".btn-submit", win).click(function() {
+    win.bPopup().close();
+    win.data("res", true);
+  });
+  
+  var me = this;
+  
+  // Assign user registration procedure
+  win.data(pname, function(data, xtype) {
+    // Start spinning
+    me.enableWaitSpinner();
+    lproc.call(me, data, xtype);
+  });
+  
+  return win;
+};
+
+OsBiPageDesigner.prototype.showPostRegWin = function(fnew, xtype) {
   var prwin = $(this.pmgr.post_reg);
-  prwin.bPopup({
+  
+  // Show one of the titles
+  $("." + (fnew ? "new" : "old") + "-reg", prwin).show();
+  $("." + (fnew ? "old" : "new") + "-reg", prwin).hide();
+  
+  // User registration must present at this point
+  if (this.ureg === undefined) {
+    alert("Not Registered ...");
+    return;
+  }
+  
+  this.showLicenseWin(prwin, "post_register", xtype);
+};
+
+OsBiPageDesigner.prototype.showLicenseRenewal = function(fexpired, xtype) {
+  var lwin = $(this.pmgr.license_renewal);
+  
+  // Show one of the titles
+  $(".license-" + (fexpired ? "expired" : "corrupted"), lwin).show();
+  $(".license-" + (fexpired ? "corrupted" : "expired"), lwin).hide();
+  
+  this.showLicenseWin(lwin, "license_renewal", xtype);
+};
+
+OsBiPageDesigner.prototype.showLicenseWin = function(win, lproc, xtype) {
+  win.data("res", false);
+  win.bPopup({
     appendTo: "#osbitools",
     onClose: function() { 
-      var res = prwin.data("res");
+      var res = win.data("res");
       if (res) {
         
         // Collect all form parameters and send for registration
         var prdata = {};
         var cnt = 0;
-        $(".r-field", prwin).each(function() {
+        $(".r-field", win).each(function() {
           var el = $(this);
           prdata[el.attr("name")] = el.val();
           cnt++;
@@ -233,7 +268,7 @@ OsBiPageDesigner.prototype.showPostRegWin = function() {
         
         if (cnt > 0)
           window.setTimeout(function() {
-            prwin.data("post_register")(prdata);
+            win.data(lproc)(prdata, xtype);
           }, 0);
       }
     }
@@ -258,6 +293,30 @@ OsBiPageDesigner.prototype.hasPreview = function() {
 OsBiPageDesigner.prototype.getEntityContextMenu = function() {
   var app = this.pmgr.getApp();
   return app.has_preview ? app.config.prj.node_ctx_menu : undefined;
+};
+
+/**
+ * Enable waiting spinner
+ * 
+ * @param {String} Export action type i.e. "preview", "html_site", "js_embedde", "portlet" etc.
+ */
+OsBiPageDesigner.prototype.enableWaitSpinner = function(xtype) {
+  if (xtype == "preview")
+    enable_wait_btn("ll_preview", "right");
+  else
+    enable_wait_popup();
+};
+
+/**
+ * Disable waiting spinner
+ * 
+ * @param {String} Export action type i.e. "preview", "html_site", "js_embedde", "portlet" etc.
+ */
+OsBiPageDesigner.prototype.disableWaitSpinner = function(xtype) {
+  if (xtype == "preview")
+    disable_wait_btn("ll_preview", "right");
+  else
+    disable_wait_popup();
 };
 
 /**
@@ -545,6 +604,7 @@ AbstractInput.prototype.init = function(wwg, name, label, params) {
   this.cname = name.replace(/_/g, "-");
   this.params = params !== undefined ? params : {};
   
+  // Flag indicating that default value can be assigned for value field.
   this.fvo = (this.params.def_value !== undefined);
   if (this.fvo)
     this.value = {def: params.def_value};
@@ -590,6 +650,14 @@ AbstractInput.prototype.setValue = function(value, fload) {
   // Remember if load from data
   if (fload)
     this.setLoaded();
+};
+
+/**
+ * Reset input value
+ */
+AbstractInput.prototype.resetValue = function() {
+  if (this.fvo)
+    this.value = {def: params.def_value};
 };
 
 /**

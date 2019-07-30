@@ -176,26 +176,6 @@ WebPage.prototype.onSaveSuccess = function(data, entity) {
 };
         
 WebPage.prototype.loadWidgetSet = function(wset, container, on_load) {
-  /*
-   // Delete obsoleted
-  // Arrange wwg by idx and remember max idx
-  var midx = 0;
-  var wlist = {};
-  for (var wtype in wset) {
-    var wdata = wset[wtype];
-    
-    for (var k in wdata) {
-      var data = wdata[k];
-      midx = Math.max(midx, data.idx);
-      wlist[data.idx] = data;
-    }
-  }
-  
-  for (var i = 0; i <= midx; i++)  
-    if (!this.loadWidget(wtype, wlist[i], container, on_load))
-      return false;
-  */
- 
  for (var i in wset) {
    witem = wset[i];
    
@@ -753,44 +733,53 @@ WebPage.prototype.onPreview = function(ds_src, qparams, fname, params, wparams) 
       // Stop spinning
       disable_wait_btn("ll_preview", "right");
     }, 
-    function(err, code) {
-      // Stop spinning
-      disable_wait_btn("ll_preview", "right");
-     
-      me.onExportError(err, code);
+    function(msg, error) {
+      me.onExportError(msg, error, "preview");
     });
 };
 
-WebPage.prototype.onExportError = function(err, code) {
-  var rwin = $(this.getPrjMgr().reg_win);
+WebPage.prototype.onExportError = function(msg, error, xtype) {
+  // Stop spinning
+  if (xtype == "preview")
+    disable_wait_btn("ll_preview", "right");
+  else
+    disable_wait_popup();
       
-  if (code == 403) {
-    rwin.data("res", false);
-    
-    rwin.bPopup({
-      appendTo: "#osbitools",
-      onClose: function() { 
-        var res = rwin.data("res");
-        if (res) {
-          
-          // Collect all form parameters and send for registration
-          var rdata = {};
-          $(".r-field", rwin).each(function() {
-            var el = $(this);
-            rdata[el.attr("name")] = el.val();
-          });
-          
-          window.setTimeout(function() {
-            rwin.data("register")(rdata);
-          }, 0);
-        }
-      }
-    });
-  } else if (code == 200) {
-    show_server_error(err);
+  // Registration window
+  var rwin = $(this.getPrjMgr().reg_win);
+  
+  // Post registration window
+  var prwin = $(this.getPrjMgr().post_reg);
+  
+  // Error could be either integer with error code or error object
+  if (typeof error === "number") {
+    if (error == 403) {
+      // Show user registration window
+      this.getApp().mod.showLicenseWin(rwin, "register", xtype);
+    } else if (error == 402) {
+      // Show license expired window
+      this.getApp().mod.showLicenseRenewal(true, xtype);
+    } else {
+      //-- 119 
+      show_ajax_error_ex(119, "HTTP ERROR " + error);
+    }
+  } else if (typeof error === "object") {
+    // Special cases are:
+    // Error #476 - license directory empty and was created after user registration
+    // Error #477 - license directory empty and need reload license package
+    // Error #455 - Missing export binary and need reload license package
+    if (error.id == 455 || error.id == 476 || error.id == 477) {
+      // If user registration saved than user already known and only code required
+      if (this.getApp().mod.ureg !== undefined)
+        this.getApp().mod.showPostRegWin(false, xtype);
+      else
+        this.getApp().mod.showLicenseRenewal(false, xtype);
+    } else {
+      show_server_error(error);
+    }
   } else {
     //-- 102 
-    show_ajax_error_ex(102, err);
+    show_ajax_error_ex(102, msg);
   }
 };
 
@@ -883,6 +872,9 @@ WebPage.prototype.export = function(type) {
   // Check if lang parameter requires
   if (!jOsBiTools.is_def_lang())
     qparams["lang"] = jOsBiTools.lang;
+  
+  // Start spinner
+  enable_wait_popup();
       
   this.uploadWebPage(this.getProject().getPrjMgr().config.ds_item.url,
       qparams, this.dname, type,
@@ -899,9 +891,12 @@ WebPage.prototype.export = function(type) {
         : make_abs_req_query(url + me.getExportApiName() + "/" + name, qpr);
         
       window.location = jOsBiTools.get_download_url(req);
+      
+      // Stop spinner
+      disable_wait_popup();
     }, 
-    function(err, code) {
-      me.onExportError(err, code);
+    function(msg, error) {
+      me.onExportError(msg, error, type);
     }
   );
 };

@@ -1,4 +1,4 @@
-#osbitools div.com-osbitools-data_grid-data_tables div.title {
+.osbitools div.com-osbitools-data_grid-data_tables div.title {
   font-weight: bold;
   font-size: 1.5em;
   text-align: center;
@@ -6,18 +6,18 @@
   white-space: normal;
 }
 
-#osbitools div.com-osbitools-data_grid-data_tables table.display {
+.osbitools div.com-osbitools-data_grid-data_tables table.display {
   color: #333;
 }
 
-#osbitools div.com-osbitools-data_grid-data_tables>div.body {
+.osbitools div.com-osbitools-data_grid-data_tables>div.body {
   font-size: 11px;
 }
 
-#osbitools .prop_win table.wwg-prop-wrapper input.excl-columns {
+.osbitools .prop_win table.wwg-prop-wrapper input.excl-columns {
   text-transform: uppercase;
 }
 
-#osbitools table.dataTable.display tbody tr td {
+.osbitools table.dataTable.display tbody tr td {
   text-align: center;
 }
